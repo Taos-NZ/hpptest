@@ -6,7 +6,7 @@
     
     <!-- Zuora Public javascript library -->
     <script type="text/javascript" 
-            src="https://static.zuora.com/Resources/libs/hosted/1.3.1/zuora-min.js"></script>
+            src="https://static.sandbox.zuora.com/Resources/libs/hosted/1.3.1/zuora-min.js"></script>
 
     <script>
     // Optional params in case prepopulation of certain fields is desired
@@ -19,16 +19,16 @@
 
     // Sample params for rendering iframe on the client side
     var params = {
-        tenantId: 2001023,  // Example: Replace with your actual tenantId
-        id: "8adccb057ee1e437017ee92e78c8202e",  // pageId (Replace with your actual pageId)
-        token: "gbwcpbLI4E1AnK6HsINmTh4Z2jnJC2VG",  // Token
-        signature: "9kgS4xDxYF7z84xhMy55aAsJpMYnRVIkXJLZXrzDSj84HLucJuFa4XEoozQfbgxnzroxYQgg1Sw==",  // Signature
+        tenantId: 2001023,  // Your Zuora tenantId for sandbox
+        id: "8adccb057ee1e437017ee92e78c8202e",  // Page ID (replace with your actual page ID)
+        token: "gbwcpbLI4E1AnK6HsINmTh4Z2jnJC2VG",  // Your payment token
+        signature: "9kgS4xDxYF7z84xhMy55aAsJpMYnRVIkXJLZXrzDSj84HLucJuFa4XEoozQfbgxnzroxYQgg1Sw==",  // Your RSA signature (example)
         style: "overlay",  // Choose the payment form style (can be 'overlay', 'embedded', etc.)
-        key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg3dgMVqiigUkYHCJbR/p+9Dhf3wWzJemco+Wwkpa1dmLqaaJK00vUo3mnVqJo6oyCzKYVa3NCimV2Ivlcn7rxOHIFy4p82gliYHKKVQmaYfrVtxOqrxrTgcJ/ybRyBsAqAu6JrSQ8tLQ0dUsHl/1dFPyir7hsw5aZJMrPbpo4eMJYAJBiXbL9rwKP3dOpQlMyJnZnbOLMhEakDUbEo/jTctjDAj0AWJ8BzWAJVT5Jj7v8d+PLt/WRmwIMUOkDmqIBDCO7oTvylxG8+g9xJ7T2gTdlDoKw+sQygg1hupv+NUuFNTd7JzUv6jTXg/tok42+IwfdmlThnqcUjOTONlUcQIDAQAB",  // Your RSA public key
+        key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg3dgMVqiigUkYHCJbR/p+9Dhf3wWzJemco+Wwkpa1dmLqaaJK00vUo3mnVqJo6oyCzKYVa3NCimV2Ivlcn7rxOHIFy4p82gliYHKKVQmaYfrVtxOqrxrTgcJ/ybRyBsAqAu6JrSQ8tLQ0dUsHl/1dFPyir7hsw5aZJMrPbpo4eMJYAJBiXbL9rwKP3dOpQlMyJnZnbOLMhEakDUbEo/jTctjDAj0AWJ8BzWAJVT5Jj7v8d+PLt/WRmwIMUOkDmqIBDCO7oTvylxG8+g9xJ7T2gTdlDoKw+sQygg1hupv+NUuFNTd7JzUv6jTXg/tok42+IwfdmlThnqcUjOTONlUcQIDAQAB",  // RSA public key
         submitEnabled: "true",  // Enable or disable the submit button
-        locale: "fr_FR",  // Example: Replace with your actual locale
+        locale: "en_US",  // Locale, e.g., 'en_US' for English
         param_supportedTypes: "AmericanExpress,JCB,Visa,MasterCard,Discover,Dankort",  // Supported card types
-        url: "https://www.zuora.com/apps/PublicHostedPageLite.do",  // Zuora HPP endpoint
+        url: "https://www.sandbox.zuora.com/apps/PublicHostedPageLite.do",  // Use sandbox URL
         paymentGateway: "DefaultGateway"  // Payment gateway name (replace with your actual gateway)
     };
 
