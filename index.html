@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuora Hosted Payment Page</title>
+    <title>Zuora Hosted Payment Page 2.0</title>
 </head>
 <body>
 
-    <!-- This is the container for Zuora's Hosted Payment Page (HPP) -->
+    <!-- This is the container where Zuora HPP will be rendered -->
     <div id="zuora_payment" data-cmp="zuora-payment-wrapper"></div>
 
-    <!-- Add Zuora's HPP JavaScript SDK -->
+    <!-- Add Zuora's Hosted Payment Page JavaScript SDK -->
     <script type="text/javascript" src="https://static.zuora.com/Resources/libs/hosted/1.3.1/zuora-min.js"></script>
 
     <script>
         // Initialize Zuora HPP
         window.onload = function() {
-            // Replace these values with your actual tenantId, pageId, and other required params.
-            var tenantId = '2001023'; // Example tenantId
-            var pageId = '8adccb057ee1e437017ee92e78c8202e'; // Example pageId
+            // Set your tenantId and pageId (use your actual tenant ID and page ID)
+            var tenantId = '2001023';  // Example: replace with your actual tenantId
+            var pageId = '8adccb057ee1e437017ee92e78c8202e';  // Example: replace with your actual pageId
 
-            // HPP Configuration
+            // HPP Configuration object
             var config = {
                 tenantId: tenantId,
                 pageId: pageId,
-                // You can pass other parameters like currency, etc., if needed.
-                // You may need to customize based on your setup in Zuora.
+                // Other configuration parameters (optional)
+                // For example, to specify language or currency, add to the config:
+                // language: "en",
+                // currency: "USD"
             };
 
-            // Render Zuora HPP
+            // Initialize and render the Zuora HPP
             Zuora.Payment.init(config);
         };
     </script>
