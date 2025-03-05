@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting to Zuora Hosted Payment Page</title>
-    <meta http-equiv="refresh" content="0; url=https://test.eu.zuora.com/apps/PublicHostedPageLite.do?tenantId=2001023&pageId=8adccb057ee1e437017ee92e78c8202e&token=mAFabQuVVIBnTES9mwe7LZ15x3IYvfa3">
 </head>
 <body>
 
     <h1>Redirecting to Zuora Hosted Payment Page...</h1>
     
-    <p>If you are not redirected automatically, click the link below to proceed to the Zuora Payment Page:</p>
-    
-    <p><a href="https://test.eu.zuora.com/apps/PublicHostedPageLite.do?tenantId=2001023&pageId=8adccb057ee1e437017ee92e78c8202e" target="_blank">Go to Zuora Payment Page</a></p>
-
     <script>
         window.onload = function() {
-            window.location.href = "https://test.eu.zuora.com/apps/PublicHostedPageLite.do?tenantId=2001023&pageId=8adccb057ee1e437017ee92e78c8202e";
+            // Define the required parameters
+            var tenantId = "2001023";
+            var pageId = "8adccb057ee1e437017ee92e78c8202e";
+            var timestamp = new Date().toISOString();  // Use the current timestamp
+            var rsaSignature = "feDQP07rhjuMeUq7GSnAPHGu40ukf+sBPRwLgw9K4bGcGP+e7cJafZY0Lh+Q4S2x9XNrDFU0VWxMdBIOiKCK+LZJMA1C1tmD/F9L1hpB0jVtVqnP4QrlTNFx9RlEc/dSggVg7+s0XCIiArSntKAnKZ2pcljrRlO7Ki9LXMaUinzu7A7KzkOGiOS9JeiXtP+vNo/SWm/QJBhA0hTaE6sTPIOFt4h8U5GtWRw+lqrJNcrfsLopYrxbRMKRHzyQamzBO54eVuNi945IKZHrr2TrmJSMrO4d5AmS00DmTvwu9jBNRC9IcPZE70ka02RhjP9JLEPEvG2RAbiZUq1uPIosJg==";  // Replace with your RSA signature
+
+            // Construct the URL for the Zuora Hosted Payment Page (HPP)
+            var redirectUrl = "https://test.eu.zuora.com/apps/PublicHostedPageLite.do?" +
+                              "tenantId=" + tenantId +
+                              "&id=" + pageId +
+                              "&timestamp=" + encodeURIComponent(timestamp) +
+                              "&token=" + rsaSignature;  // The generated RSA signature (token)
+
+            // Redirect the user to the HPP
+            window.location.href = redirectUrl;
         };
     </script>
 
