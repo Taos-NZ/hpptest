@@ -12,18 +12,19 @@
     <script>
         window.onload = function() {
             // Define the required parameters
-            var tenantId = "2001023";
-            var pageId = "8adccb057ee1e437017ee92e78c8202e";
-            var timestamp = new Date().toISOString();  // Use the current timestamp
-            var rsaSignature = "feDQP07rhjuMeUq7GSnAPHGu40ukf+sBPRwLgw9K4bGcGP+e7cJafZY0Lh+Q4S2x9XNrDFU0VWxMdBIOiKCK+LZJMA1C1tmD/F9L1hpB0jVtVqnP4QrlTNFx9RlEc/dSggVg7+s0XCIiArSntKAnKZ2pcljrRlO7Ki9LXMaUinzu7A7KzkOGiOS9JeiXtP+vNo/SWm/QJBhA0hTaE6sTPIOFt4h8U5GtWRw+lqrJNcrfsLopYrxbRMKRHzyQamzBO54eVuNi945IKZHrr2TrmJSMrO4d5AmS00DmTvwu9jBNRC9IcPZE70ka02RhjP9JLEPEvG2RAbiZUq1uPIosJg==";  // Replace with your RSA signature
+            var tenantId = "2001023";  // Correct tenant ID
+            var pageId = "8adccb057ee1e437017ee92e78c8202e";  // Correct page ID
+            var timestamp = new Date().toISOString();  // Use the current timestamp in ISO format
+            var rsaSignature = "tUvgGKyR9gG8mIWqBJfxKrl4sWHnr0na";  // Replace with your RSA signature
 
             // Construct the URL for the Zuora Hosted Payment Page (HPP)
-            var redirectUrl = "https://test.eu.zuora.com/apps/PublicHostedPageLite.do?" +
+            var redirectUrl = "https://test.zuora.com/apps/PublicHostedPageLite.do?" +
                               "tenantId=" + tenantId +
                               "&id=" + pageId +
                               "&timestamp=" + encodeURIComponent(timestamp) +
                               "&token=" + rsaSignature;  // The generated RSA signature (token)
 
+            console.log("Redirect URL: ", redirectUrl); // Log the URL for debugging
             // Redirect the user to the HPP
             window.location.href = redirectUrl;
         };
