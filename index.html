@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting to Zuora Hosted Payment Page</title>
-    <meta http-equiv="refresh" content="0; url=https://test.eu.zuora.com/apps/PublicHostedPageLite.do?tenantId=20000561&id=8acce135953bdbd30195607355f76d99">
 </head>
 <body>
 
     <h1>Redirecting to Zuora Hosted Payment Page...</h1>
     
-    <p>If you are not redirected, <a href="https://test.eu.zuora.com/apps/PublicHostedPageLite.do?tenantId=20000561&id=8acce135953bdbd30195607355f76d99">click here</a>.</p>
+    <p>If you are not redirected automatically, click the link below to proceed to the Zuora Payment Page:</p>
+    
+    <p><a href="https://test.eu.zuora.com/apps/PublicHostedPageLite.do?tenantId=20000561&id=8acce135953bdbd30195607355f76d99" target="_blank">Go to Zuora Payment Page</a></p>
 
     <script>
-        setTimeout(function() {
+        window.onload = function() {
             window.location.href = "https://test.eu.zuora.com/apps/PublicHostedPageLite.do?tenantId=20000561&id=8acce135953bdbd30195607355f76d99";
-        }, 1000);
+        };
     </script>
 
 </body>
